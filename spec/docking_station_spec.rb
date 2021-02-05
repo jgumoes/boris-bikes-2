@@ -10,4 +10,13 @@ subject(:docking_station) {described_class.new}
     expect(docking_station.release_bike).to be_instance_of(Bike)
     expect(docking_station.release_bike).to be_working
   end
+  it { is_expected.to respond_to(:dock_bike).with(1).argument }
+
+  it { is_expected.to respond_to(:bike) }
+
+  it 'docks something' do
+    bike  = Bike.new
+    expect(subject.dock_bike(bike)).to eq bike
+  end
+
 end

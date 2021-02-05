@@ -1,3 +1,4 @@
+require './lib/docking_station'
 class Bike
   def working?
     return true
